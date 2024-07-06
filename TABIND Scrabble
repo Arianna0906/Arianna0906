@@ -1,3 +1,27 @@
+#*********************************************************************************#
+# FILE: TABIND-Scrabble-Project                                                   #
+#                                                                                 #
+# DESCRIPTION: The objective of this project is to develop a program that takes   #
+# the letter combination “tabind”, it will generate all possible valid words from #                                                #
+# a given set of letters. Also, provide an interactive interface to query         #
+# different sets of letters.
+# DEVELOPER: Arianna Liu                                                          #
+# DEVELOPER PHONE: +1 (858) 568-0120                                              #
+# DEVELOPER EMAIL: qil014@ucsd.edu                                                #
+#                                                                                 #
+# VERSION: 1.0                                                                    #
+# CREATED DATE-TIME: 20240704-10:00 Eastern Time Zone USA                         #
+#                                                                                 #
+# VERSION: 1.1                                                                    #
+# REVISION DATE-TIME: YYYYMMDD-HH:MM                                              #
+# DEVELOPER MAKING CHANGE: First_name Last_name                                   #
+# DEVELOPER MAKING CHANGE: PHONE: +1 (XXX) XXX-XXXX                               #
+# DEVELOPER MAKING CHANGE: EMAIL: first.last@email.com                            #
+#                                                                                 #
+#*********************************************************************************#
+
+#    Scripts start below
+
 import itertools
 import nltk
 from nltk.corpus import words
