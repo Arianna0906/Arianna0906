@@ -1,0 +1,59 @@
+import itertools
+import nltk
+from nltk.corpus import words
+
+# Set NLTK data path
+nltk.data.path.append('/Users/liu/nltk_data')  # Replace with your own path
+
+# Download NLTK data
+nltk.download('words')
+
+# Get English word list
+word_list = set(words.words())
+
+# Generate all possible valid words from permutations
+def find_valid_words(letters):
+    perm_list = set()
+    for i in range(1, len(letters) + 1):
+        perms = itertools.permutations(letters, i)
+        for perm in perms:
+            perm_word = ''.join(perm)
+            if perm_word in word_list:
+                perm_list.add(perm_word)
+    return sorted(perm_list)
+
+# Initial valid words from "tabind"
+initial_letters = "tabind"
+initial_valid_words = find_valid_words(initial_letters)
+
+# Interactive menu
+def interactive_menu():
+    while True:
+        print("\nPlease choose an option:")
+        print("1. Display all valid words for 'tabind'")
+        print("2. Check combinations of other letters")
+        print("3. Exit")
+
+        choice = input("Enter your choice (1/2/3): ")
+
+        if choice == '1':
+            print("\nValid words from 'tabind':")
+            for word in initial_valid_words:
+                print(word)
+            print(f"\nTotal number of valid words from 'tabind': {len(initial_valid_words)}")
+        elif choice == '2':
+            other_letters = input("Enter the letters to check: ")
+            other_valid_words = find_valid_words(other_letters)
+            print(f"\nValid words from '{other_letters}':")
+            for word in other_valid_words:
+                print(word)
+            print(f"\nTotal number of valid words from '{other_letters}': {len(other_valid_words)}")
+        elif choice == '3':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+# Run the interactive menu
+interactive_menu()
+
