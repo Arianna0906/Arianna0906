@@ -27,7 +27,7 @@ import nltk
 from nltk.corpus import words
 
 # Set NLTK data path
-nltk.data.path.append('/Users/liu/nltk_data')  # Replace with your own path
+nltk.data.path.append('/Users/liu/nltk_data') 
 
 # Download NLTK data
 nltk.download('words')
