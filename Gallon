@@ -1,0 +1,55 @@
+from collections import deque
+
+def solve_bucket_problem():
+    initial_state = (0, 0)
+    queue = deque([(initial_state, 0)])
+    visited = set([initial_state])
+    parent_map = {initial_state: None}
+
+    while queue:
+        state, steps = queue.popleft()
+
+        if is_goal_state(state):
+            return reconstruct_path(parent_map, state)
+
+        for neighbor in get_neighbors(state):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append((neighbor, steps + 1))
+                parent_map[neighbor] = (state, steps)
+
+    return -1
+
+def is_goal_state(state):
+    return state[0] == 4 or state[1] == 4
+
+def get_neighbors(state):
+    x, y = state
+    neighbors = []
+
+    neighbors.append((3, y))  # Fill the 3-gallon bucket
+    neighbors.append((x, 5))  # Fill the 5-gallon bucket
+    neighbors.append((0, y))  # Empty the 3-gallon bucket
+    neighbors.append((x, 0))  # Empty the 5-gallon bucket
+
+    transfer = min(x, 5 - y)  # Pour from 3-gallon to 5-gallon
+    neighbors.append((x - transfer, y + transfer))
+
+    transfer = min(y, 3 - x)  # Pour from 5-gallon to 3-gallon
+    neighbors.append((x + transfer, y - transfer))
+
+    return neighbors
+
+def reconstruct_path(parent_map, state):
+    path = []
+    while state:
+        path.append(state)
+        state = parent_map[state][0] if parent_map[state] else None
+    path.reverse()
+
+    for step, s in enumerate(path):
+        print(f"Step {step}: State {s}")
+    return len(path) - 1
+
+steps = solve_bucket_problem()
+print(f"Goal reached in {steps} steps")
