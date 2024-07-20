@@ -1,3 +1,25 @@
+#*********************************************************************************#
+# FILE: Gallon-Bukect-Problem-Project                                                   #
+#                                                                                 #
+# DESCRIPTION: The objective of this project is to develop a program that can     #
+# solve the problem of 2 kids fetching 4 gallons of water from a stream, using    #
+# only an unmarked 3-gallon bucket, and an unmarked 5-gallon bucket, in less      #
+# than 15 steps.
+# DEVELOPER: Arianna Liu                                                          #
+# DEVELOPER PHONE: +1 (858) 568-0120                                              #
+# DEVELOPER EMAIL: qil014@ucsd.edu                                                #
+#                                                                                 #
+# VERSION: 1.0                                                                    #
+# CREATED DATE-TIME: 20240716-10:00 Eastern Time Zone USA                         #
+#                                                                                 #
+# VERSION: 1.1                                                                    #
+# REVISION DATE-TIME: YYYYMMDD-HH:MM                                              #
+# DEVELOPER MAKING CHANGE: First_name Last_name                                   #
+# DEVELOPER MAKING CHANGE: PHONE: +1 (XXX) XXX-XXXX                               #
+# DEVELOPER MAKING CHANGE: EMAIL: first.last@email.com                            #
+#                                                                                 #
+#*********************************************************************************#
+
 from collections import deque
 
 def solve_bucket_problem():
